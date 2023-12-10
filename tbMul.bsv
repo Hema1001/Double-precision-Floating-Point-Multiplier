@@ -1,4 +1,4 @@
-package TbMul;
+package TbMul_pkg;
 //imported libraries
 import FloatingPoint ::*;
 import FIFO::*;
@@ -56,7 +56,7 @@ module mkTbMul (Empty);
       $display("cycle:",rg_cycle," ",fshow(f),fshow(g));
 
     endrule
-    
+     
     rule rl_send3(rg_cycle==3); //sending first set of inputs in fourth cycle
       FloatingPoint#(11, 52) f,g;
 
@@ -164,20 +164,20 @@ module mkMulPipe (Ifc_mul_dp);
 	Reg#(Bit#(13)) rg_er<-mkReg(0);
 	Reg#(Bit#(1)) rg_sr<-mkReg(0);
 	
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy1 <- mkReg(tuple2(unpack(0),unpack(0)));
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy2 <- mkReg(tuple2(unpack(0),unpack(0)));
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy3 <- mkReg(tuple2(unpack(0),unpack(0)));
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy4 <- mkReg(tuple2(unpack(0),unpack(0)));
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy5 <- mkReg(tuple2(unpack(0),unpack(0)));
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy6 <- mkReg(tuple2(unpack(0),unpack(0)));
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy7 <- mkReg(tuple2(unpack(0),unpack(0)));
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy8 <- mkReg(tuple2(unpack(0),unpack(0)));
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy9 <- mkReg(tuple2(unpack(0),unpack(0)));
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy10 <- mkReg(tuple2(unpack(0),unpack(0)));
-	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_copy11 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_1 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_2 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_3 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_4 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_5 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_6 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_7 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_8 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_9 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_10 <- mkReg(tuple2(unpack(0),unpack(0)));
+	Reg#(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52))) d_11 <- mkReg(tuple2(unpack(0),unpack(0)));
 	
 	rule rl_eval_exponent_sign_stage1;                                         
-	  match {.opA, .opB} = d_copy1;
+	  match {.opA, .opB} = d_1;
 	  rg_er <= eval_exp(opA.exp,opB.exp);                   //evaluating exponent, 1st stage
 	  rg_sr <= pack(opA.sign != opB.sign);                                         //evaluating sign, 1st stage
 	endrule
@@ -194,7 +194,7 @@ module mkMulPipe (Ifc_mul_dp);
 	
 	
 	rule rl_eval_partial_product_1_stage1;                  
-	  match {.opA, .opB} = d_copy2;                                  
+	  match {.opA, .opB} = d_2;                                  
 	  Bit#(11) expA1 = 0;
 	  Bit#(11) expB1 = 0;
 	  Bit#(52) sfdA1 = 0;
@@ -246,17 +246,17 @@ module mkMulPipe (Ifc_mul_dp);
 
 	// send and receive methods
 	method Action send(Tuple2#(FloatingPoint#(11,52),FloatingPoint#(11,52)) data_in);
-	 d_copy1<=data_in;
-	 d_copy2<=data_in;
-	 d_copy3<=data_in;
-	 d_copy4<=data_in;
-	 d_copy5<=data_in;
-	 d_copy6<=data_in;
-	 d_copy7<=data_in;
-	 d_copy8<=data_in;
-	 d_copy9<=data_in;
-	 d_copy10<=data_in;
-	 d_copy11<=data_in;
+	 d_1<=data_in;
+	 d_2<=data_in;
+	 d_3<=data_in;
+	 d_4<=data_in;
+	 d_5<=data_in;
+	 d_6<=data_in;
+	 d_7<=data_in;
+	 d_8<=data_in;
+	 d_9<=data_in;
+	 d_10<=data_in;
+	 d_11<=data_in;
 	endmethod
 
 
@@ -278,4 +278,4 @@ endmethod
 
 
 endmodule: mkMulPipe
-endpackage: TbMul
+endpackage: TbMul_pkg
