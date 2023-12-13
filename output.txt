@@ -1,0 +1,15 @@
+cycle:  0 <Float -401.4000000000000><Float +400.0000000000001>
+cycle:  1 <Float -3ff.23456789abcde><Float +400.8000000000000>
+cycle:  2 <Float -000.0000000000001><Float -000.000123456789a>
+cycle:  3 <Float -400.12456789abcde><Float +3fe.0976543210123>
+cycle:  4 <Float +400.123456789abc1><Float +3fe.9876543210102>
+----output------
+cycle:  6 <Float -402.4000000000001>
+----output------
+cycle:  7 <Float -400.b4e81b4e81b4d>
+----output------
+cycle:  8 <Float +401.000123456789b>
+----output------
+cycle:  9 <Float -3ff.1c689e5fa50c8>
+----output------
+cycle: 10 <Float +3ff.b582281ede000>
