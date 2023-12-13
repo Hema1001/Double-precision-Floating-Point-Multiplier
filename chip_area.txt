@@ -1,0 +1,38 @@
+
+6. Printing statistics.
+
+=== mkPDpMul ===
+
+   Number of wires:                784
+   Number of wire bits:           5803
+   Number of public wires:         120
+   Number of public wire bits:    5139
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                394
+     sky130_fd_sc_hd__a211oi_1       2
+     sky130_fd_sc_hd__a21o_1         4
+     sky130_fd_sc_hd__a21oi_1       22
+     sky130_fd_sc_hd__a31o_1         1
+     sky130_fd_sc_hd__a31oi_1        2
+     sky130_fd_sc_hd__and2_0         5
+     sky130_fd_sc_hd__clkinv_1       6
+     sky130_fd_sc_hd__dfxtp_1       88
+     sky130_fd_sc_hd__lpflow_isobufsrc_1      2
+     sky130_fd_sc_hd__maj3_1         1
+     sky130_fd_sc_hd__nand2_1        9
+     sky130_fd_sc_hd__nand3_1        3
+     sky130_fd_sc_hd__nand4_1        1
+     sky130_fd_sc_hd__nor2_1       133
+     sky130_fd_sc_hd__nor2b_1        2
+     sky130_fd_sc_hd__o21a_1         4
+     sky130_fd_sc_hd__o21ai_0       85
+     sky130_fd_sc_hd__o311ai_0       1
+     sky130_fd_sc_hd__o31ai_1        2
+     sky130_fd_sc_hd__or3_1          1
+     sky130_fd_sc_hd__xnor2_1       14
+     sky130_fd_sc_hd__xor2_1         6
+
+   Chip area for module '\mkPDpMul': 3241.859200
+
